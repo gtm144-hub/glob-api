@@ -11,11 +11,7 @@ services:
     ports:
       - 8000:8000
     environment:
-      PYTHONNUNBUFFERED: 1
-      WAIT_HOSTS: "postgres_db:5432"
-      WAIT_HOSTS_TIMEOUT: 600
-      WAIT_SLEEP_INTERVAL: 2
-      WAIT_HOST_CONNECT_TIMEOUT: 30
+      - DATABASE_URL=postgresql://user:password@db:5432/test-employers
     depends_on:
       - db
 ## Use dummy user and password for now, configure 
