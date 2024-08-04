@@ -13,3 +13,9 @@ Solve the two sections in a simple manner given the following characteristics:
 ### Phase 2:
 - Create continous development(cd) with github actions to run test automatically 
 - Deploy app to GCP cloud run
+
+### Phase 3:
+- Add error messages
+- Add optimization techniques:
+-- For high concurrency, look for multithready solutions (dask)
+-- For large csvs, take generators into consideration with sqlalchemy
