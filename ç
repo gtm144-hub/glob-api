@@ -11,7 +11,7 @@ services:
     ports:
       - 8000:8000
     environment:
-      - PYTHONPATH=/app
+      - PYTHONPATH=/appº
       - DATABASE_URL=postgresql://user:password@db/test-employers
     depends_on:
       - db
