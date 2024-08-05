@@ -5,11 +5,11 @@ services:
     container_name: fast_api
     image: fast_api_dev
     build: .
-    command: sh -c "sleep 10 && uvicorn main:app --host 0.0.0.0 --port 8080 --reload"
+    command: sh -c "sleep 10 && uvicorn main:app --host 0.0.0.0 --port 8070 --reload"
     volumes:
       - ./app:/app
     ports:
-      - 8080:8080
+      - 8070:8070
     environment:
       - PYTHONPATH=/app
       - DATABASE_URL=postgresql://user:password@db/test-employers
