@@ -28,7 +28,7 @@ jobs:
 
     - name: Run pytest
       run: |
-        docker exec -ti fast_api pytest tests/service/stats.py
+        docker exec -i fast_api pytest tests/service/stats.py
 
     - name: Stop Docker containers
       run: |
