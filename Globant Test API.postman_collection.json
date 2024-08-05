@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "f72de9ca-2f2e-442e-930a-69b72d0e6cb7",
+		"name": "Globant Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14645891"
+	},
+	"item": [
+		{
+			"name": "Hired Employees by Quarter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stats/employees-quarter",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stats",
+						"employees-quarter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hired Count By Department Over Average",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stats/hired-count",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stats",
+						"hired-count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Department List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gabo/Downloads/data_challenge_files (1)/departments.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/csv-upload/department",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"csv-upload",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Job List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gabo/Downloads/data_challenge_files (1)/jobs.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/csv-upload/job",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"csv-upload",
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Employee List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gabo/Downloads/data_challenge_files (1)/hired_employees.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/csv-upload/employee",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"csv-upload",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
