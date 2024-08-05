@@ -1,0 +1,36 @@
+name: Run Tests on Main Branch Pull Request
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Compose
+      run: |
+        sudo apt-get install -y docker-compose
+
+    - name: Build and run Docker containers
+      run: |
+        docker-compose up -d
+        docker ps
+
+    - name: Wait for services to be ready
+      run: |
+        # Wait for your services to be ready
+        # You might need to adjust this based on your specific services
+        sleep 30
+
+    - name: Run pytest
+      run: |
+        docker exec -ti fast_api pytest tests/service/stats.py
+
+    - name: Stop Docker containers
+      run: |
+        docker-compose down
+      if: always() 
