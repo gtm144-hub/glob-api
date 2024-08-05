@@ -14,7 +14,6 @@ async def upload_to_db(file: UploadFile, db: Session, type_list: dict, model):
         raise HTTPException(status_code=400, detail="Invalid file type. Please upload a CSV file.")
     
     try:
-        print("DESASDF")
         while chunk := await file.read(CHUNCK_FILE_SIZE):
             decoded_content = chunk.decode('utf-8')
             pd_chunck = pd.read_csv(io.StringIO(decoded_content))
