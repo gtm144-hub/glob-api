@@ -1,6 +1,9 @@
-from db_config import Job, Department, Employee
 from sqlalchemy.orm import Session
+from sqlalchemy import insert
 
-def get_dp(db: Session):
-    return db.query(Department).first()
+def insert_data(db: Session, data: dict, model):
+    with db.begin():
+        db.execute(insert(model).values(data))
+        db.commit()
+    return
 

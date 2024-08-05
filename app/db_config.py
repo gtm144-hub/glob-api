@@ -23,20 +23,20 @@ class Department(Base):
 
     #TODO Look for database index optimizations improvements
     id = Column(Integer, primary_key=True)
-    name = Column(String, unique=False)
+    name = Column(String)
 
 class Job(Base):
     __tablename__ = "jobs"
 
     #TODO Look for database index optimizations improvements
     id = Column(Integer, primary_key=True)
-    name = Column(String, unique=False)
+    name = Column(String)
 
 class Employee(Base):
     __tablename__ = "employees"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String, unique=False)
-    datetime = Column(DateTime, index=True)
+    name = Column(String)
+    datetime = Column(DateTime)
     department_id = Column(Integer, ForeignKey("departments.id"))
     job_id = Column(Integer, ForeignKey("jobs.id"))

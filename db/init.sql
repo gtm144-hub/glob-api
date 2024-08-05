@@ -1,18 +1,18 @@
 -- Create DDLs for this test
 
 CREATE TABLE departments(
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(100) NOT NULL
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(100)
 );
 
 CREATE TABLE jobs(
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(100) NOT NULL
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(100)
 );
 
 CREATE TABLE employees(
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(100) NOT NULL,
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(100),
   datetime TIMESTAMP,
   department_id INTEGER,
   job_id INTEGER,
@@ -20,10 +20,3 @@ CREATE TABLE employees(
   FOREIGN KEY (job_id) REFERENCES jobs (id)
 );
 
-INSERT INTO departments (
-  name
-) VALUES ('Supply Chain'), ('Maintenance'), ('Staff');
-
-
-INSERT INTO jobs (
-  name) VALUES ('Recruiter'), ('Manager'), ('Analyst');
