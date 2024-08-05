@@ -1,6 +1,6 @@
 ## Glob Test API
 
-This API aims to apply the code challenge sent by e-mail. Given the time constraints, I would resolve this challenge in four phases:
+This API aims to apply the code challenge sent by e-mail. Given the time constraints, I would resolve this challenge in three phases:
 
 ### Phase 1:
 Solve the two sections in a simple manner given the following characteristics:
