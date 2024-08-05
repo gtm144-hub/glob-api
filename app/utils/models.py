@@ -1,17 +1,17 @@
 department_types = {
-    'id': 'int',
+    'id': 'Int64',
     'name': 'string'
 }
 
 job_types = {
-    'id': 'int',
+    'id': 'Int64',
     'name': 'string'
 }
 
 employee_types = {
-    'id': 'int',
+    'id': 'Int64',
     'name': 'string',
     'datetime': 'string',
-    'department_id': 'int',
-    'job_id': 'int'
+    'department_id': 'Int64',
+    'job_id': 'Int64'
 }

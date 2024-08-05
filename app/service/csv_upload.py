@@ -6,6 +6,8 @@ import io
 
 from repository.csv_upload import insert_data
 
+CHUNCK_FILE_SIZE = 1024 * 1024
+
 async def upload_to_db(file: UploadFile, db: Session, type_list: dict, model):
 
     if not file.filename.endswith('.csv'):
@@ -13,17 +15,11 @@ async def upload_to_db(file: UploadFile, db: Session, type_list: dict, model):
     
     try:
         print("DESASDF")
-        while chunk := await file.read(1024 * 1024):
+        while chunk := await file.read(CHUNCK_FILE_SIZE):
             decoded_content = chunk.decode('utf-8')
-            print("ASDFVR")
             pd_chunck = pd.read_csv(io.StringIO(decoded_content))
-            print("GTRDS")
-            print(pd_chunck)
-            print(type_list)
             df = pd_chunck.astype(type_list)
-            print("FDASGVTR")
             data = df.to_dict(orient='records')
-            print(data)
 
             insert_data(db, data, model)
 
